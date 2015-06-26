@@ -1,0 +1,35 @@
+{
+  "name": "terminal-console",
+  "description": "A console that allows rewriting the last logged message. Good for progress bar, status updates, etc.",
+  "author": {
+    "name": "Bogdan Mustiata",
+    "email": "bogdan.mustiata@gmail.com"
+  },
+  "version": "0.1.0",
+  "dependencies": {
+    "supports-color": "^1.3.1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-typescript": "^0.6.2"
+  },
+  "keywords": [],
+  "main": "./lib/TerminalConsole.js",
+  "bugs": {
+    "url": "https://github.com/bmustiata/terminal-console/issues"
+  },
+  "licenses": [
+    {
+      "type": "BSD",
+      "url": "https://github.com/bmustiata/terminal-console/blob/master/LICENSE"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bmustiata/terminal-console.git"
+  },
+  "readme": "# terminal-console\nA console that allows rewriting the last logged message. Good for progress bars, status updates, etc.\n## Usage\nSave this as `presentation.js`.\n```javascript\nvar tc = require('terminal-console'),\n    colors = require(\"colors/safe\");\ntc.log('terminal-console is ' + colors.random('awesome') + '!');\n// this will keep rewriting the previous line.\nsetInterval(function(){\n    tc.relog(colors.bold('terminal-console') +\n        ' is ' + colors.random('awesome') + '!');\n}, 40);\n```\nRun it:\n```\nnpm install terminal-console\nnpm install colors\nnode presentation.js\n```\nBe amazed.\n## Change Log\n* 2015-06-27 v0.1.0 Released v0.1.0\n",
+  "readmeFilename": "README.md",
+  "homepage": "http://blog.ciplogic.com"
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"AnsiRemover.js","sourceRoot":"","sources":["../src/main/core/AnsiRemover.ts"],"names":["removeAnsiCode"],"mappings":"AACA,IAAM,WAAW,GAAG,uFAAuF,CAAC;AAE5G;;;GAGG;AACH,wBAA+B,OAAe;IAC7CA,MAAMA,CAACA,OAAOA,CAACA,OAAOA,CAACA,WAAWA,EAAEA,EAAEA,CAACA,CAACA;AACzCA,CAACA;AAFe,sBAAc,iBAE7B,CAAA"}
