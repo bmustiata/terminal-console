@@ -31,5 +31,5 @@ Be amazed.
 
 ## Change Log
 
+* 2015-06-27 v0.1.1 *Bugfixes* for message rewrites.
 * 2015-06-27 v0.1.0 Released v0.1.0
-
