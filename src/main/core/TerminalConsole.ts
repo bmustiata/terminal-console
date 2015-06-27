@@ -97,12 +97,25 @@ class TerminalConsole {
 	 * Formats the text for reprinting it (by moving the cursor up) and memorize
 	 */
 	private _reprint() : string {
-		var rowCount = Math.floor( this._lastMessageLength / TerminalConsole._SIZE_WATCHER.rows ) + 1;
+		var rowCount = Math.floor( this._lastMessageLength / TerminalConsole._SIZE_WATCHER.columns ) + 1;
 		
 		//FIXME: depending on the strategy, the space cleanup might be needed
 		var loggedText = AnsiUtil.moveCursorUp(rowCount) +
 						 util.format.apply(util.format, arguments);
 		var pureText = AnsiUtil.removeAnsiCode(loggedText);
+		
+		if (pureText.length < this._lastMessageLength) {
+			// new text is shorter than previously printed text, so we need to
+			// fill the old text with spaces.
+			var spaces = "";
+			
+			for (var i = pureText.length; i < this._lastMessageLength; i++) {
+				spaces += " ";
+			}
+
+			loggedText += AnsiUtil.RESET + spaces;
+			pureText += spaces;
+		}
 		
 		this._lastMessageLength = pureText.length;
 		
