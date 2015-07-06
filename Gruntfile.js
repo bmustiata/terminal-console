@@ -9,7 +9,7 @@ module.exports = function(grunt) {
                 options: {
                     module : 'commonjs',
                     sourceMap: true,
-                    definitions: true
+                    declaration: true
                 },
                 files: [{
                     dest: "lib/",

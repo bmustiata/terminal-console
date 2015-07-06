@@ -7,8 +7,9 @@ import watcher = require("./TerminalSizeWatcher");
 /**
  * A class that allows relogging the previously written message by using the
  * ANSI up code.
+ * @inmodule "terminal-console"
  */
-class TerminalConsole {
+export class TerminalConsole {
 	private _lastMessageLength : number = 0;
 	
 	private static _SIZE_WATCHER = new watcher.TerminalSizeWatcher();
@@ -126,4 +127,3 @@ class TerminalConsole {
 
 module.exports = new TerminalConsole();
 module.exports.console = module.exports;
-module.exports.TerminalConsole = TerminalConsole;
