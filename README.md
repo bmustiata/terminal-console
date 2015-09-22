@@ -7,7 +7,7 @@ A console that allows rewriting the last logged message. Good for progress bars,
 Save this as `presentation.js`.
 
 ```javascript
-var tc = new require('terminal-console').TerminalConsole(),
+var tc = new require('terminal-console').console,
     colors = require("colors/safe");
 
 tc.log('terminal-console is ' + colors.random('awesome') + '!');
@@ -41,6 +41,7 @@ To get autocomplete, type checking and all the other goodies.
 
 ## Change Log
 
+* 2015-09-22 v0.2.0 Switched to d.ts definition.
 * 2015-07-06 v0.1.2 *Bugfixes* Added .ts.d definitions.
 * 2015-06-27 v0.1.1 *Bugfixes* for message rewrites.
 * 2015-06-27 v0.1.0 Released v0.1.0

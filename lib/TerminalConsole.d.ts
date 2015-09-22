@@ -53,3 +53,4 @@ export declare class TerminalConsole {
      */
     private _reprint();
 }
+export declare var console: TerminalConsole;

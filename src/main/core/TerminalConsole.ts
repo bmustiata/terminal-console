@@ -4,6 +4,8 @@ import util = require("util");
 import AnsiUtil = require("./AnsiUtil");
 import watcher = require("./TerminalSizeWatcher");
 
+var actualConsole = global.console;
+
 /**
  * A class that allows relogging the previously written message by using the
  * ANSI up code.
@@ -24,28 +26,28 @@ export class TerminalConsole {
 	 * Logs the given arguments, and keeps track of the last written text.
 	 */
 	public log(message?: any, ...optionalParams: any[]): void {
-		console.log(this._print.apply(this, arguments));
+		actualConsole.log(this._print.apply(this, arguments));
 	}
 
 	/**
 	 * Relogs the given message, by clearing first the previous message.
 	 */
 	public relog(message?: any, ...optionalParams: any[]): void {
-		console.log(this._reprint.apply(this, arguments));
+		actualConsole.log(this._reprint.apply(this, arguments));
 	}
 	
 	/**
 	 * Logs the given arguments, and keeps track of the last written text.
 	 */
 	public error(message?: any, ...optionalParams: any[]): void {
-		console.error(this._print.apply(this, arguments));
+		actualConsole.error(this._print.apply(this, arguments));
 	}
 
 	/**
 	 * Relogs the given message, by clearing first the previous message.
 	 */
 	public reerror(message?: any, ...optionalParams: any[]): void {
-		console.error(this._reprint.apply(this, arguments));
+		actualConsole.error(this._reprint.apply(this, arguments));
 	}
 
 
@@ -53,28 +55,28 @@ export class TerminalConsole {
 	 * Logs the given arguments, and keeps track of the last written text.
 	 */
 	public info(message?: any, ...optionalParams: any[]): void {
-		console.info(this._print.apply(this, arguments));
+		actualConsole.info(this._print.apply(this, arguments));
 	}
 
 	/**
 	 * Relogs the given message, by clearing first the previous message.
 	 */
 	public reinfo(message?: any, ...optionalParams: any[]): void {
-		console.info(this._reprint.apply(this, arguments));
+		actualConsole.info(this._reprint.apply(this, arguments));
 	}
 
 	/**
 	 * Logs the given arguments, and keeps track of the last written text.
 	 */
 	public warn(message?: any, ...optionalParams: any[]): void {
-		console.log(this._print.apply(this, arguments));
+		actualConsole.log(this._print.apply(this, arguments));
 	}
 
 	/**
 	 * Relogs the given message, by clearing first the previous message.
 	 */
 	public rewarn(message?: any, ...optionalParams: any[]): void {
-		console.log(this._reprint.apply(this, arguments));
+		actualConsole.log(this._reprint.apply(this, arguments));
 	}
 
 
@@ -125,5 +127,4 @@ export class TerminalConsole {
 
 }
 
-module.exports = new TerminalConsole();
-module.exports.console = module.exports;
+export var console = new TerminalConsole();
